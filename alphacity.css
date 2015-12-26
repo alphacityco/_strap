@@ -1,0 +1,5 @@
+/* Estilos propios */
+
+header#sticker {
+    z-index: 10000;
+}

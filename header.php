@@ -25,7 +25,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site container">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<?php if ( is_front_page() || is_home() ) : ?>
@@ -78,5 +77,7 @@
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+	<header id="sticker" class="intro-header">
+		<?php if (dynamic_sidebar('top-mapa')); {  } ?>
+    	</header>	<div id="page" class="site container">
+		<div id="content" class="site-content">

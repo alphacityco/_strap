@@ -110,11 +110,27 @@ function _s_widgets_init() {
 }
 add_action( 'widgets_init', '_s_widgets_init' );
 
+function crear_widget( $nombre, $id, $descripcion ) {
+		register_sidebar(array(
+			'name' => __( $nombre ),	 
+			'id' => $id, 
+			'description' => __( $descripcion ),
+			'before_widget' => '<div class="widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>'
+		));
+}
+crear_widget('Mapa principal / Leaflet','top-mapa','Se mostrará en el medio de la página principal del sitio.');
+// Enable shortcodes in widgets
+add_filter('widget_text', 'do_shortcode');	
+
 /**
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	wp_enqueue_style('alphacity', get_template_directory_uri() . '/alphacity.css');
 
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -122,7 +138,9 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), 'v3.3.5', true );
+    	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), 'v3.3.5', true );
+	wp_enqueue_script( 'alpha-leaflet', get_template_directory_uri() . '/js/alpha-leaflet.js', array( 'jquery' ), 'v3.3.5', true );
+	wp_enqueue_script( 'sticky-header', get_template_directory_uri() . '/js/sticky/jquery.sticky.js', array(), '20151225', true );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
@@ -156,3 +174,7 @@ require get_template_directory() . '/inc/jetpack.php';
 */
 require get_template_directory() . '/inc/functions-strap.php';
 
+/**
+* Shortocodes
+*/
+require get_template_directory() . '/inc/shortcodes.php';
