@@ -130,6 +130,7 @@ add_filter('widget_text', 'do_shortcode');
  */
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	//wp_enqueue_style('alphacity', get_template_directory_uri() . '/css/clean-blog.min.css');
 	wp_enqueue_style('alphacity', get_template_directory_uri() . '/alphacity.css');
 
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

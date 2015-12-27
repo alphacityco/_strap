@@ -1,5 +1,49 @@
 /* Estilos propios */
 
+.menu-bar {
+    position: absolute;
+    top: 30px;    
+    left: 50%;
+    height: 14px;
+    margin-left: -10px;
+}
+
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;    
+    background-color: #333;
+    box-shadow: 0 5px 0 #333, 0 10px 0 #333;
+}
+
+.menu {
+    display: none; 
+    width: 100%;
+    padding: 70px 10px 50px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+.logo-texto {
+	text-transform: uppercase;
+	padding-top: 40px;
+}
+
+.menu ul {
+    margin-bottom: 0;
+}
+.menu a {
+    color: #333; 
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+.menu a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
 header#sticker {
     z-index: 10000;
 }

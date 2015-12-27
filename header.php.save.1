@@ -41,8 +41,8 @@
     	<div class="collapse menu" id="menu">
             <ul class="list-inline">
 		<?php $foot_nav = wp_nav_menu( array( 'container' => '', 'echo' => '0', 'theme_location' => 'primary' ) );
-	 $foot_nav2 = preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $foot_nav );
-	// $foot_nav2 = preg_replace( array( '#<li[^>]*>#', '#</li>$#' ), '', $foot_nav2 );
+	 	      $foot_nav2 = preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $foot_nav );
+	              // $foot_nav2 = preg_replace( array( '#<li[^>]*>#', '#</li>$#' ), '', $foot_nav2 );
 	 echo $foot_nav2;
 	  ?>
             </ul> 
